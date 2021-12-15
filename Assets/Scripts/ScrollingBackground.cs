@@ -23,7 +23,7 @@ public class ScrollingBackground : MonoBehaviour
 	private RawImage image;
 
 	// How much to offset the texture. Used for scrolling.
-	private Vector2 offset = Vector2.zero;
+	private Vector2 rectOffset = Vector2.zero;
 
 	// Number of times to repeat the texture.
 	private Vector2 repeat;
@@ -35,13 +35,14 @@ public class ScrollingBackground : MonoBehaviour
 		image = GetComponent<RawImage>();
 
 		repeat = new Vector2(rectTransform.sizeDelta.x / image.mainTexture.width, rectTransform.sizeDelta.y / image.mainTexture.height);
-		image.uvRect = new Rect(offset, repeat);
+		image.uvRect = new Rect(rectOffset, repeat);
 	}
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        Vector2 offset = new Vector2(Time.time * speed, Time.time * speed);
-        image.uvRect = new Rect(offset, repeat);
+    	float offset = (Time.time * speed) % 1;
+        Vector2 rectOffset = new Vector2(offset, offset);
+        image.uvRect = new Rect(rectOffset, repeat);
     }
 }
