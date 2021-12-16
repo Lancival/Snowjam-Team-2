@@ -63,7 +63,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collider2D other)
+    public void OnColliderEnter2D(Collider2D other)
     {
         rb = other.gameObject.GetComponent<Rigidbody2D>();
         if (other.gameObject.tag == "Enemy")
