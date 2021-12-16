@@ -2,26 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 
 public class PlayerControl : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Animator animator;
-
     public int breadHeld { get; set; }
     public int butterHeld { get; set; }
     public bool presentHeld { get; set; }
     public List<int> jamHeld { get; set; }
-    private bool grounded;
     
     [SerializeField] private int jumpHeight;
     [SerializeField] private float speed;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject UIObject;
+    [SerializeField] public List<Sprite> sprites;
 
+    private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 inputVec = Vector2.zero;
-
+    private bool grounded;
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,17 +40,17 @@ public class PlayerControl : MonoBehaviour
         inputVec = input.Get<Vector2>();
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground")
         {
             grounded = true;
         }
     }
 
-    public void OnCollisionExit2D(Collision2D collision)
+    public void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground")
         {
             grounded = false;
         }
@@ -68,4 +71,21 @@ public class PlayerControl : MonoBehaviour
         if (inputVec.y > 0 && grounded)
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
     }
+
+    /* public void UpdateDisplay()
+    {
+        for(int i = 0; i < breadHeld; i++){
+            GameObject nextUIObject = Instantiate(UIObject, canvas.transform);
+            nextUIObject.transform.position = nextUIObject.transform.position + new Vector3(i*150,0,0);
+            nextUIObject.GetComponent<Image>().image = sprites[0].texture;
+        }
+        for(int i = 0; i < butterHeld; i++){
+            Instantiate(UIObject, canvas.transform);
+        }
+        foreach(var jam in jamHeld){
+            for(int i = 0; i < jam; i++){
+                Instantiate(UIObject, canvas.transform);
+            }
+        }
+    } */
 }

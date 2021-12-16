@@ -13,35 +13,35 @@ public class Pickup : MonoBehaviour
 
     [SerializeField] private PickupType type;
     [SerializeField] private JamTypes jamType;
-    [SerializeField] private List<Sprite> sprites;
+
+    private PlayerControl pickupSprites;
 
     void Start()
     {
+        pickupSprites = GameObject.Find("Player").GetComponent<PlayerControl>();
         if(type != PickupType.jam){
             jamType = JamTypes.None;
         }
         switch(type){
             case PickupType.bread:
-                this.GetComponent<SpriteRenderer>().sprite = sprites[0];
+                this.GetComponent<SpriteRenderer>().sprite = pickupSprites.sprites[0];
                 break;
             case PickupType.butter:
-                Debug.LogError("Butter sprite not implemented");
-                this.GetComponent<SpriteRenderer>().sprite = sprites[1];
+                this.GetComponent<SpriteRenderer>().sprite = pickupSprites.sprites[1];
                 break;
             case PickupType.present:
-                this.GetComponent<SpriteRenderer>().sprite = sprites[2];
+                this.GetComponent<SpriteRenderer>().sprite = pickupSprites.sprites[2];
                 break;
             case PickupType.jam:
                 switch(jamType){
                     case JamTypes.strawberry:
-                        this.GetComponent<SpriteRenderer>().sprite = sprites[3];
+                        this.GetComponent<SpriteRenderer>().sprite = pickupSprites.sprites[3];
                         break;
                     case JamTypes.avocado:
-                        this.GetComponent<SpriteRenderer>().sprite = sprites[4];
+                        this.GetComponent<SpriteRenderer>().sprite = pickupSprites.sprites[4];
                         break;
                     case JamTypes.peach:
-                        Debug.LogError("Peach sprite not implemented");
-                        this.GetComponent<SpriteRenderer>().sprite = sprites[5];
+                        this.GetComponent<SpriteRenderer>().sprite = pickupSprites.sprites[5];
                         break;
                     default:
                         Debug.LogError("Error, Jam Type not set in the Inspector!");
@@ -55,17 +55,19 @@ public class Pickup : MonoBehaviour
     {
         if(other.gameObject.name == "Player"){
             Debug.Log("Picking up object...");
+            PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
             switch(type){
                 case PickupType.bread:
-                    other.gameObject.GetComponent<PlayerControl>().breadHeld += 1;
+                    player.breadHeld += 1;
                     break;
                 case PickupType.butter:
-                    other.gameObject.GetComponent<PlayerControl>().butterHeld += 1;
+                    player.butterHeld += 1;
                     break;
                 case PickupType.jam:
-                    other.gameObject.GetComponent<PlayerControl>().jamHeld[(int)jamType] += 1;
+                    player.jamHeld[(int)jamType] += 1;
                     break;    
             }
+            // player.UpdateDisplay();
             Destroy(this.gameObject);  
         }
     }
