@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] private int jumpHeight;
     [SerializeField] private float speed;
+    [SerializeField] private int bounceDist;
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject UIObject;
     [SerializeField] public List<Sprite> sprites;
@@ -59,6 +60,15 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             grounded = false;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collider2D other)
+    {
+        rb = other.gameObject.GetComponent<Rigidbody2D>();
+        if (other.gameObject.tag == "Enemy")
+        {
+            rb.AddForce(new Vector2(-1, 1) * bounceDist, ForceMode2D.Impulse);
         }
     }
 
