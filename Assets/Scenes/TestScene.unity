@@ -389,7 +389,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5498941299008687672, guid: 7afc69c1da13f39448cfdac8cdae0bc5, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5498941299008687672, guid: 7afc69c1da13f39448cfdac8cdae0bc5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 2078822450}
   - component: {fileID: 2078822451}
   - component: {fileID: 2078822453}
+  - component: {fileID: 2078822455}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -699,7 +700,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.275}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

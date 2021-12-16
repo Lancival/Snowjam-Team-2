@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
 
     public int breadHeld { get; set; }
     public int butterHeld { get; set; }
+    public bool presentHeld { get; set; }
     public List<int> jamHeld { get; set; }
     private bool grounded;
     
