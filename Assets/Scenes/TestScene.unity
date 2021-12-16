@@ -974,7 +974,6 @@ GameObject:
   - component: {fileID: 2078822451}
   - component: {fileID: 2078822453}
   - component: {fileID: 2078822455}
-  - component: {fileID: 2078822456}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1208,25 +1207,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -1}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2078822456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078822447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be94d6959ce53d48bcc83538562b242, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: d9654e0524668df43bee13dc2d68a3c0, type: 3}
-  - {fileID: 21300000, guid: 8ba1c5996d2c1ff4a8db3338a5ef2c8c, type: 3}
-  - {fileID: 21300000, guid: aa7eac95756388949b7b053ffa306528, type: 3}
-  - {fileID: 21300000, guid: b509c7f7c7cdbf347bf5a71e046e82a7, type: 3}
-  - {fileID: 21300000, guid: 473480bd7cc892544b8f7ad0c39cbede, type: 3}
-  - {fileID: 21300000, guid: ff90da68d8b32f84ebf8a2d2083eba72, type: 3}
 --- !u!1001 &5498941299741453851
 PrefabInstance:
   m_ObjectHideFlags: 0
