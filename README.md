@@ -1,5 +1,5 @@
-# Snowjam Team 2
+# Duck Duck Toast
 
-This is the repository for our as-of-yet unnamed game for UCLA ACM Studio's Winter 2021 [Snowjam](https://itch.io/jam/studiosnowjam)!
+This is the repository for Team 2's game for UCLA ACM Studio's Winter 2021 [Snowjam](https://itch.io/jam/studiosnowjam)!
 
-You will be able to play the game on [our itch.io page](https://lancival.itch.io/snowjam-team-2).
+You will be able to play the game on [our itch.io page](https://lancival.itch.io/duck-duck-toast).
