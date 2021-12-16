@@ -6,15 +6,17 @@ using UnityEngine.InputSystem;
 public class PlayerControl : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private int breadHeld { get; set; }
-    private int butterHeld { get; set; }
-    private List<int> jamHeld { get; set; }
+    public int breadHeld { get; set; }
+    public int butterHeld { get; set; }
+    public List<int> jamHeld { get; set; }
     [SerializeField] private float speed;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        jamHeld = new List<int>(3);
+        breadHeld = 0;
+        butterHeld = 0;
     }
 
     public void OnMove(InputValue input)
