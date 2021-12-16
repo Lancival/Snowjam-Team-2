@@ -13,12 +13,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private int jumpHeight;
     [SerializeField] private float speed;
 
+    private Animator animator;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         jamHeld = new List<int>(3) {0, 0, 0};
         breadHeld = 0;
         butterHeld = 0;
+        animator = GetComponent<Animator>();
+        animator.Play("Idle_Anim");
     }
 
     public void OnMove(InputValue input)
