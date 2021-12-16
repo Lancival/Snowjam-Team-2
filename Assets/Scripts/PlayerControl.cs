@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        jamHeld = new List<int>(3);
+        jamHeld = new List<int>(3) {0, 0, 0};
         breadHeld = 0;
         butterHeld = 0;
     }

@@ -9,21 +9,33 @@ public class Duckling : MonoBehaviour
     [SerializeField] private int jamWanted;
     [SerializeField] private JamTypes jamType;
 
-    // Start is called before the first frame update
-    void Start()
+    private bool active;
+
+    void Awake()
     {
-        
+        if(jamWanted > 0){
+            if(jamType == JamTypes.None){
+                Debug.LogError($"{this.name} wants jam but no Jam Type is set in the Inspector!");
+            }
+        }else{
+            jamType = JamTypes.None;
+        }
+        active = true;
     }
 
-    // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player"){
             PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
             if( breadWanted > player.breadHeld || butterWanted > player.butterHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]) ){
-                Debug.Log("Missing some stuff! Later this should be a bubble or something.");
+                Debug.Log($"Missing some stuff for {this.name}! Later this should be a bubble or something.");
             }else{
-                Debug.Log("Successfully fed duckling! Later this should probably be a bubble");
+                player.breadHeld -= breadWanted;
+                player.butterHeld -= butterWanted;
+                if(jamWanted > 0){
+                    player.jamHeld[(int)jamType] -= jamWanted;
+                }
+                Debug.Log($"Successfully fed {this.name}!");
             }
         }
     }
