@@ -61,4 +61,5 @@ crashlytics-build.properties
 # Editor User Settings
 UserSettings/EditorUserSettings.asset
 
-*.DS_Store
+# MacOS meta Information
+**.DS_Store
