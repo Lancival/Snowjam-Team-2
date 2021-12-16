@@ -1,4 +1,4 @@
-# Duck Duck Toast
+# Duck Duck TOAST
 
 <img align="right" src="https://github.com/Lancival/Snowjam-Team-2/blob/main/Assets/Art/Duck/Idle/1.png">
 
