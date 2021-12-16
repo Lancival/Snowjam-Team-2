@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Yarn.Unity;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -13,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     public int butterHeld { get; set; }
     public bool presentHeld { get; set; }
     public List<int> jamHeld { get; set; }
-    
+
     [SerializeField] private int jumpHeight;
     [SerializeField] private float speed;
     [SerializeField] private GameObject canvas;
