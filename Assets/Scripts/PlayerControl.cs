@@ -26,11 +26,18 @@ public class PlayerControl : MonoBehaviour
 
     public void OnMove(InputValue input)
     {
+
         Vector2 inputVec = input.Get<Vector2>();
         //jump if grounded, don't jump if not
-        inputVec.y = grounded ? inputVec.y : 0;
+        inputVec.y = 0;
         rb.velocity = inputVec * speed;
 
+    }
+
+    public void OnJump(InputValue input)
+    {
+        Debug.LogError("spacebar!");
+        rb.AddForce(transform.up * jumpHeight);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
