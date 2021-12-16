@@ -68,7 +68,7 @@ public class PlayerControl : MonoBehaviour
         rb = other.gameObject.GetComponent<Rigidbody2D>();
         if (other.gameObject.tag == "Enemy")
         {
-            rb.AddForce(new Vector2(-1, 1) * bounceDist, ForceMode2D.Impulse());
+            rb.AddForce(new Vector2(-1, 1) * bounceDist, ForceMode2D.Impulse);
         }
     }
 
