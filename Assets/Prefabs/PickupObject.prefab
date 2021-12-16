@@ -126,5 +126,8 @@ MonoBehaviour:
   jamType: -1
   sprites:
   - {fileID: 21300000, guid: d9654e0524668df43bee13dc2d68a3c0, type: 3}
+  - {fileID: 21300000, guid: 8ba1c5996d2c1ff4a8db3338a5ef2c8c, type: 3}
+  - {fileID: 21300000, guid: aa7eac95756388949b7b053ffa306528, type: 3}
   - {fileID: 21300000, guid: b509c7f7c7cdbf347bf5a71e046e82a7, type: 3}
   - {fileID: 21300000, guid: 473480bd7cc892544b8f7ad0c39cbede, type: 3}
+  - {fileID: 21300000, guid: ff90da68d8b32f84ebf8a2d2083eba72, type: 3}
