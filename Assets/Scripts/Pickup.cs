@@ -12,22 +12,38 @@ public class Pickup : MonoBehaviour
 
     [SerializeField] private PickupType type;
     [SerializeField] private JamTypes jamType;
+    [SerializeField] private List<Sprite> sprites;
 
     void Start()
     {
-        switch(type){
-            case PickupType.bread:
-                // this.GetComponent<SpriteRender>)().sprite =
-                break;
-            case PickupType.butter:
-                // this.GetComponent<SpriteRender>)().sprite =
-                break;
-            case PickupType.jam:
-                // this.GetComponent<SpriteRender>)().sprite =
-                break;
-        }
         if(type != PickupType.jam){
             jamType = JamTypes.None;
+        }
+        switch(type){
+            case PickupType.bread:
+                this.GetComponent<SpriteRenderer>().sprite = sprites[0];
+                break;
+            case PickupType.butter:
+                Debug.LogError("Butter sprite not implemented");
+                //this.GetComponent<SpriteRenderer>().sprite = sprites[];
+                break;
+            case PickupType.jam:
+                switch(jamType){
+                    case JamTypes.strawberry:
+                        this.GetComponent<SpriteRenderer>().sprite = sprites[1];
+                        break;
+                    case JamTypes.avocado:
+                        this.GetComponent<SpriteRenderer>().sprite = sprites[2];
+                        break;
+                    case JamTypes.peach:
+                        Debug.LogError("Peach sprite not implemented");
+                        //this.GetComponent<SpriteRenderer>().sprite = sprites[];
+                        break;
+                    default:
+                        Debug.LogError("Error, Jam Type not set in the Inspector!");
+                        break;
+                }
+                break;
         }
     }
 
@@ -43,6 +59,7 @@ public class Pickup : MonoBehaviour
                     other.gameObject.GetComponent<PlayerControl>().butterHeld += 1;
                     break;
                 case PickupType.jam:
+                    Debug.Log((int)jamType);
                     other.gameObject.GetComponent<PlayerControl>().jamHeld[(int)jamType] += 1;
                     break;    
             }
