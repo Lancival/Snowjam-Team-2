@@ -74,8 +74,10 @@ public class PlayerControl : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         // Jump only if grounded
-        if (inputVec.y > 0 && grounded)
+        if (inputVec.y > 0 && grounded){
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
+            grounded = false;
+        }
         mainCamera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, mainCamera.transform.position.z);
     }
 
