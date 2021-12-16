@@ -62,6 +62,15 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collider2D other)
+    {
+        rb = other.gameObject.GetComponent<Rigidbody2D>();
+        if (other.gameObject.tag == "Enemy")
+        {
+            rb.AddForce(new Vector2(-1, 1), ForceMode2D.Impulse());
+        }
+    }
+
     void FixedUpdate()
     {
         // Set x-velocity without changing y-velocity
