@@ -9,7 +9,10 @@ public class PlayerControl : MonoBehaviour
     private int breadHeld { get; set; }
     private int butterHeld { get; set; }
     private List<int> jamHeld { get; set; }
+    private bool grounded;
+    [SerializeField] private int jumpHeight;
     [SerializeField] private float speed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,27 @@ public class PlayerControl : MonoBehaviour
         Vector2 inputVec = input.Get<Vector2>();
         inputVec.y = 0;
         rb.velocity = inputVec * speed;
+
+        if (grounded == true)
+        {
+            // jump
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = false;
+        }
     }
 
     // Update is called once per frame
