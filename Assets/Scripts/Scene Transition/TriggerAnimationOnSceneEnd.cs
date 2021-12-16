@@ -22,6 +22,6 @@ public class TriggerAnimationOnSceneEnd : MonoBehaviour
 
     private void Trigger(float duration)
     {
-    	animator.SetTrigger("Trigger");
+    	animator.SetTrigger("SceneEnd");
     }
 }

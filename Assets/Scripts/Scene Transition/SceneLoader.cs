@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+[DisallowMultipleComponent]
+
 public class SceneLoader : MonoBehaviour
 {
 	// Current instance of SceneLoader, if one exists
