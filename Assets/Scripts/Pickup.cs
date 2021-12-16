@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour
     private enum PickupType{
         bread,
         butter,
+        present,
         jam,
     }
 
@@ -25,19 +26,22 @@ public class Pickup : MonoBehaviour
                 break;
             case PickupType.butter:
                 Debug.LogError("Butter sprite not implemented");
-                //this.GetComponent<SpriteRenderer>().sprite = sprites[];
+                this.GetComponent<SpriteRenderer>().sprite = sprites[1];
+                break;
+            case PickupType.present:
+                this.GetComponent<SpriteRenderer>().sprite = sprites[2];
                 break;
             case PickupType.jam:
                 switch(jamType){
                     case JamTypes.strawberry:
-                        this.GetComponent<SpriteRenderer>().sprite = sprites[1];
+                        this.GetComponent<SpriteRenderer>().sprite = sprites[3];
                         break;
                     case JamTypes.avocado:
-                        this.GetComponent<SpriteRenderer>().sprite = sprites[2];
+                        this.GetComponent<SpriteRenderer>().sprite = sprites[4];
                         break;
                     case JamTypes.peach:
                         Debug.LogError("Peach sprite not implemented");
-                        //this.GetComponent<SpriteRenderer>().sprite = sprites[];
+                        this.GetComponent<SpriteRenderer>().sprite = sprites[5];
                         break;
                     default:
                         Debug.LogError("Error, Jam Type not set in the Inspector!");
@@ -59,7 +63,6 @@ public class Pickup : MonoBehaviour
                     other.gameObject.GetComponent<PlayerControl>().butterHeld += 1;
                     break;
                 case PickupType.jam:
-                    Debug.Log((int)jamType);
                     other.gameObject.GetComponent<PlayerControl>().jamHeld[(int)jamType] += 1;
                     break;    
             }

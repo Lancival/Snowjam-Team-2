@@ -25,9 +25,9 @@ public class Duckling : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "Player"){
+        if(active && other.gameObject.name == "Player"){
             PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
-            if( breadWanted > player.breadHeld || butterWanted > player.butterHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]) ){
+            if( !player.presentHeld || breadWanted > player.breadHeld || butterWanted > player.butterHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]) ){
                 Debug.Log($"Missing some stuff for {this.name}! Later this should be a bubble or something.");
             }else{
                 player.breadHeld -= breadWanted;
@@ -35,6 +35,7 @@ public class Duckling : MonoBehaviour
                 if(jamWanted > 0){
                     player.jamHeld[(int)jamType] -= jamWanted;
                 }
+                active = false;
                 Debug.Log($"Successfully fed {this.name}!");
             }
         }
