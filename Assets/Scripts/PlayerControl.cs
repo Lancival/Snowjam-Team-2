@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
     public void OnJump(InputValue input)
     {
         Debug.LogError("spacebar!");
-        rb.AddForce(transform.up * jumpHeight);
+        rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
