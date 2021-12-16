@@ -54,7 +54,7 @@ public class Pickup : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player"){
-            Debug.Log("Picking up object...");
+            Debug.Log($"Picking up object {this.name} ...");
             PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
             switch(type){
                 case PickupType.bread:
@@ -62,6 +62,9 @@ public class Pickup : MonoBehaviour
                     break;
                 case PickupType.butter:
                     player.butterHeld += 1;
+                    break;
+                case PickupType.present:
+                    player.presentHeld = true;
                     break;
                 case PickupType.jam:
                     player.jamHeld[(int)jamType] += 1;

@@ -22,6 +22,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject UIObject;
     [SerializeField] public List<Sprite> sprites;
     [SerializeField] public TMP_Text timerText;
+    [SerializeField] public GameObject mainCamera;
 
     private float timer; // Time in seconds
     private Rigidbody2D rb;
@@ -75,13 +76,14 @@ public class PlayerControl : MonoBehaviour
         // Jump only if grounded
         if (inputVec.y > 0 && grounded)
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
+        mainCamera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, mainCamera.transform.position.z);
     }
 
     void Update()
     {    
         int minutes = (int)timer/60;
         int seconds = (int)timer%60;
-        timerText.text = seconds < 10 ? $"Time: {minutes} : 0{seconds}" : $"Time: {minutes} : {seconds}";
+        timerText.text = seconds < 10 ? $"Time: {minutes}:0{seconds}" : $"Time: {minutes}:{seconds}";
         timer -= Time.deltaTime;
     }
 

@@ -25,18 +25,23 @@ public class Duckling : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(active && other.gameObject.name == "Player"){
-            PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
-            if( !player.presentHeld || breadWanted > player.breadHeld || butterWanted > player.butterHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]) ){
-                Debug.Log($"Missing some stuff for {this.name}! Later this should be a bubble or something.");
-            }else{
-                player.breadHeld -= breadWanted;
-                player.butterHeld -= butterWanted;
-                if(jamWanted > 0){
-                    player.jamHeld[(int)jamType] -= jamWanted;
+        if(other.gameObject.name == "Player" && other != other.gameObject.GetComponent<CircleCollider2D>()){
+            if(active){
+                PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
+                if( !player.presentHeld || breadWanted > player.breadHeld || butterWanted > player.butterHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]) ){
+                    Debug.Log($"Missing some stuff for {this.name}! Later this will be a bubble or something.");
+                }else{
+                    player.breadHeld -= breadWanted;
+                    player.butterHeld -= butterWanted;
+                    player.presentHeld = false;
+                    if(jamWanted > 0){
+                        player.jamHeld[(int)jamType] -= jamWanted;
+                    }
+                    active = false;
+                    Debug.Log($"Successfully fed {this.name}!");
                 }
-                active = false;
-                Debug.Log($"Successfully fed {this.name}!");
+            }else{
+                Debug.Log($"{this.name} has already been fed! Later this will be text or something");
             }
         }
     }
