@@ -1323,7 +1323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7738772853174547321, guid: db1f440be616c4e4f8c4901e436bbd74, type: 3}
       propertyPath: nextScene
-      value: Scene Transition Test
+      value: World
       objectReference: {fileID: 0}
     - target: {fileID: 7738772853174547323, guid: db1f440be616c4e4f8c4901e436bbd74, type: 3}
       propertyPath: m_Pivot.x
