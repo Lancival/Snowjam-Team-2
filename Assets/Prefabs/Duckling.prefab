@@ -123,10 +123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bdcfbb34aa5c14290da84e9705c09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breadWanted: 0
-  butterWanted: 0
-  jamWanted: 0
+  breadWanted: 2
+  jamWanted: 1
   jamType: -1
+  completed: {fileID: 0}
+  startNodeCompleted: 
+  outOfTime: {fileID: 0}
+  startNodeOutOfTime: 
+  runner: {fileID: 0}
 --- !u!95 &4134529054826801294
 Animator:
   serializedVersion: 3
