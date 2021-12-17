@@ -21,16 +21,16 @@ public class Duckling : MonoBehaviour
         [Tooltip("Dialogue to display if you deliver the toast in time.")]
         [SerializeField] private YarnProgram completed;
 
-        [Tooltip("Name of the starting node for the completed YarnProgram")]
+        [Tooltip("Name of the starting node for the completed YarnProgram.")]
         [SerializeField] private string startNodeCompleted;
 
         [Tooltip("Dialogue to display if you run out of time.")]
         [SerializeField] private YarnProgram outOfTime;
 
-        [Tooltip("Name of the starting node for the outOfTime YarnProgram")]
+        [Tooltip("Name of the starting node for the outOfTime YarnProgram.")]
         [SerializeField] private string startNodeOutOfTime;
 
-        [Tooltip("DialogueRunner component for this scene.")]
+        [Tooltip("DialogueRunner component for this scene. Should be found on the Dialogue Canvas game object.")]
         [SerializeField] private DialogueRunner runner;
 
     private bool finished = false;
