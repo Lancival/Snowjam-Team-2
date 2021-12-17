@@ -40,13 +40,14 @@ public class PlayerControl : MonoBehaviour
     private Vector2 inputVec = Vector2.zero;
     private bool grounded;
     private bool controllable;
+    private Vector3 scaleFactor;
     
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mainCamera = Camera.main.transform;
-
+        scaleFactor = transform.localScale;
         jamHeld = new List<int>(3) {0, 0, 0};
         breadHeld = 0;
         butterHeld = 0;
@@ -97,9 +98,9 @@ public class PlayerControl : MonoBehaviour
             animator.SetBool("IsRunning", true);
 
             if (inputVec.x > 0)
-                transform.localScale = Vector3.one;
+                transform.localScale = scaleFactor;
             else if (inputVec.x < 0)
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-1 * scaleFactor.x, scaleFactor.y, scaleFactor.z);
         }
 
         // Jump only if grounded
