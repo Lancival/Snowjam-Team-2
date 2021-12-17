@@ -109,7 +109,7 @@ public class PlayerControl : MonoBehaviour
         // Update position of camera
         float xcord = this.transform.position.x;
         float ycord = this.transform.position.y;
-        if(xcord <= 0.7 || xcord >= 291){
+        if(xcord <= 0.7) {
             xcord = mainCamera.transform.position.x;
         }
         if(ycord <= -3 || ycord >= 10){
