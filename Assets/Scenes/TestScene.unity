@@ -1220,6 +1220,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 759411941}
+    - target: {fileID: 3478162276265864289, guid: 7fcf00317cecc4abebde9ca26ef8b777, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3478162276265864291, guid: 7fcf00317cecc4abebde9ca26ef8b777, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1545,11 +1549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7560237157105995160, guid: 3be8338a6920d8a4795d077f8a20693e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.6470587
+      value: 1.0588236
       objectReference: {fileID: 0}
     - target: {fileID: 7560237157105995160, guid: 3be8338a6920d8a4795d077f8a20693e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.9411764
+      value: 1.2205882
       objectReference: {fileID: 0}
     - target: {fileID: 7560237157105995161, guid: 3be8338a6920d8a4795d077f8a20693e, type: 3}
       propertyPath: runner
@@ -1561,12 +1565,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7560237157105995161, guid: 3be8338a6920d8a4795d077f8a20693e, type: 3}
       propertyPath: completed
-      value: 
-      objectReference: {fileID: 2480198943629176163, guid: 2c1dcf3a016f5419b8b49a12ade892ef, type: 3}
+      value: d1HasItems
+      objectReference: {fileID: 0}
     - target: {fileID: 7560237157105995161, guid: 3be8338a6920d8a4795d077f8a20693e, type: 3}
       propertyPath: outOfTime
-      value: 
-      objectReference: {fileID: 2480198943629176163, guid: 214d52ba4141a4eccb6ca269549e8c29, type: 3}
+      value: d1Time
+      objectReference: {fileID: 0}
     - target: {fileID: 7560237157105995161, guid: 3be8338a6920d8a4795d077f8a20693e, type: 3}
       propertyPath: startNodeCompleted
       value: d1HasItems

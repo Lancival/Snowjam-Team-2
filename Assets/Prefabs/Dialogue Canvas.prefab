@@ -88,7 +88,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3478162276265864222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yarnScripts:
   - {fileID: 2480198943629176163, guid: e94d79d00e2ea4dd9aca167825858f6f, type: 3}
+  - {fileID: 2480198943629176163, guid: 2c1dcf3a016f5419b8b49a12ade892ef, type: 3}
+  - {fileID: 2480198943629176163, guid: 214d52ba4141a4eccb6ca269549e8c29, type: 3}
+  - {fileID: 2480198943629176163, guid: cb395c903aa5c4768b39262d6395206a, type: 3}
+  - {fileID: 2480198943629176163, guid: 2a34b085a9f8042b3a3adeff829ed142, type: 3}
+  - {fileID: 2480198943629176163, guid: 2219d6b2d03674a13a1aca2bb1a54f1e, type: 3}
+  - {fileID: 2480198943629176163, guid: 3fd8ff2c0d4d44d818eed1b5ac64a778, type: 3}
   textLanguage: 
   variableStorage: {fileID: 3478162276265864290}
   dialogueUI: {fileID: 3478162276265864293}
@@ -360,8 +366,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name Here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
+  m_sharedMaterial: {fileID: 5051320198639115472, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -572,8 +578,8 @@ MonoBehaviour:
   m_text: 'Quack quack quack quack quack quack quack quack quack quack quack quack
     quack quack quack quack quack quack quack quack quack quack quack quack '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
+  m_sharedMaterial: {fileID: 5051320198639115472, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

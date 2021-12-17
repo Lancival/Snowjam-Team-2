@@ -18,17 +18,11 @@ public class Duckling : MonoBehaviour
 
     [Header("YarnSpinner")]
 
-        [Tooltip("Dialogue to display if you deliver the toast in time.")]
-        [SerializeField] private YarnProgram completed;
-
         [Tooltip("Name of the starting node for the completed YarnProgram.")]
-        [SerializeField] private string startNodeCompleted;
-
-        [Tooltip("Dialogue to display if you run out of time.")]
-        [SerializeField] private YarnProgram outOfTime;
+        [SerializeField] private string completed;
 
         [Tooltip("Name of the starting node for the outOfTime YarnProgram.")]
-        [SerializeField] private string startNodeOutOfTime;
+        [SerializeField] private string outOfTime;
 
         [Tooltip("DialogueRunner component for this scene. Should be found on the Dialogue Canvas game object.")]
         [SerializeField] private DialogueRunner runner;
@@ -41,21 +35,11 @@ public class Duckling : MonoBehaviour
         if (jamWanted > 0 && jamType == JamTypes.None)
             Debug.LogError($"{this.name} wants jam but no JamType is set in the Inspector!");
 
-        if (completed == null || outOfTime == null)
-            Debug.LogError($"{this.name} is missing dialogue that needs to be assigned in the Inspector!");
-
-        if (startNodeCompleted == "" || startNodeOutOfTime == "")
+        if (completed == "" || outOfTime == "")
             Debug.LogWarning($"{this.name} is missing name(s) for the starting nodes for the Yarn programs.");
 
         if (runner == null)
             Debug.LogError($"{this.name} is missing a reference to the DialogueRunner component!");
-    }
-
-    void Start()
-    {
-        // Add Yarn programs to DialogueRunner
-        runner.Add(completed);
-        runner.Add(outOfTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -66,14 +50,14 @@ public class Duckling : MonoBehaviour
             {
                 PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
 
-                if (!player.presentHeld || breadWanted > player.breadHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]))
-                {
-                    runner.StartDialogue("MissingItems");
-                }
-                else if (Timer.TimerInstance.TimeLeft() <= 0)
+                if (Timer.TimerInstance.TimeLeft() <= 0)
                 {
                     finished = true;
-                    runner.StartDialogue(startNodeOutOfTime);
+                    runner.StartDialogue(outOfTime);
+                }
+                else if (!player.presentHeld || breadWanted > player.breadHeld || (jamWanted > 0 && jamWanted > player.jamHeld[(int)jamType]))
+                {
+                    runner.StartDialogue("MissingItems");
                 }
                 else
                 {
@@ -83,7 +67,7 @@ public class Duckling : MonoBehaviour
                         player.jamHeld[(int)jamType] -= jamWanted;
 
                     finished = true;
-                    runner.StartDialogue(startNodeCompleted);
+                    runner.StartDialogue(completed);
                 }
             }
         }
