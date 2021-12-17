@@ -29,7 +29,8 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 inputVec = Vector2.zero;
-    private bool grounded;
+    [SerializeField] private bool grounded;
+    private bool controllable;
     
     void Awake()
     {
@@ -39,7 +40,7 @@ public class PlayerControl : MonoBehaviour
         breadHeld = 0;
         butterHeld = 0;
         animator = GetComponent<Animator>();
-        //animator.Play("Idle_Anim");
+        controllable = true;
     }
 
     public void OnMove(InputValue input)
@@ -52,6 +53,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             grounded = true;
+            if(!controllable) controllable = true;
         }
     }
 
@@ -63,19 +65,19 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void OnColliderEnter2D(Collider2D other)
+    public void OnCollisionEnter2D(Collision2D other)
     {
-        rb = other.gameObject.GetComponent<Rigidbody2D>();
         if (other.gameObject.tag == "Enemy")
         {
             rb.AddForce(new Vector2(-1, 1) * bounceDist, ForceMode2D.Impulse);
+            controllable = false;
         }
     }
 
     void FixedUpdate()
     {
         // Set x-velocity without changing y-velocity
-        rb.velocity = new Vector2(inputVec.x * speed, rb.velocity.y);
+        if(controllable) rb.velocity = new Vector2(inputVec.x * speed, rb.velocity.y);
 
         // Flip duck direction
         if (inputVec.x > 0)
