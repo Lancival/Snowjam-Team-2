@@ -1,0 +1,15 @@
+title: d2HasItems
+tags: 
+colorID: 0
+position: 1523,185
+---
+<<setSpeaker d2>>
+By my calculations, you appear to be Santa. #line:0cfe7d8
+<<setSpeaker MC>>
+Indeed I am! I have brought you your most cherished gift. #line:020f654
+<<setSpeaker d2>>
+It's good to know that I've been a good duckling. #line:0253d8b
+<<setSpeaker MC>>
+Of course! It's good that you tutor your friend in the hospital. #line:042f5a5
+Happy holidays! #line:02601d9
+===

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2c1dcf3a016f5419b8b49a12ade892ef
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - d1HasItems-d1HasItems-0
+  - d1HasItems-d1HasItems-1
+  - d1HasItems-d1HasItems-2
+  - d1HasItems-d1HasItems-3
+  - d1HasItems-d1HasItems-4
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 2c1dcf3a016f5419b8b49a12ade892ef, type: 3}
+  localizations: []

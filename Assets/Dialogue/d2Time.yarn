@@ -1,0 +1,14 @@
+title: d2Time
+tags: 
+colorID: 0
+position: 1477,135
+---
+<<setSpeaker d2>>
+No, my calculations were imprecise! #line:0486250
+Santa has NOT presented me my gift on time. #line:056da26
+<<setSpeaker MC>>
+I'm sorry. I've been busy in the North Pond. #line:018aa45
+I'll put you at the top of the list next year. #line:07edb68
+<<setSpeaker d2>>
+I'll calculate for next year then. #line:035918b
+===

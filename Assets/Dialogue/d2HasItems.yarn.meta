@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: cb395c903aa5c4768b39262d6395206a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs: []
+  compilationStatus: 0
+  isSuccesfullyCompiled: 0
+  compilationErrorMessage: "Error on line 6 at position 5:\nmismatched input 's'
+    expecting COMMAND_IF\n>><<setSpeaker d2>>\n    ^"
+  baseLanguage: {instanceID: 0}
+  localizations: []

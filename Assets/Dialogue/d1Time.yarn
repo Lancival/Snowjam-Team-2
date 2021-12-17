@@ -1,0 +1,14 @@
+title: d1Time
+tags: 
+colorID: 0
+position: 1543,272
+---
+<<setSpeaker d1>>
+Wahhh! Santa forgot about me! #line:0b40085
+<<setSpeaker MC>>
+I'm sorry young duckling. It was very busy in the North Pond. #line:0cb9082
+<<setSpeaker d1>>
+But I've been a good duckling! #line:0903680
+<<setSpeaker MC>>
+I know, little one. #line:00e3ef9
+===

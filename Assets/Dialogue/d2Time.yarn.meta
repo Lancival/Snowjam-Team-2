@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2a34b085a9f8042b3a3adeff829ed142
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - d2Time-d2Time-0
+  - d2Time-d2Time-1
+  - d2Time-d2Time-2
+  - d2Time-d2Time-3
+  - d2Time-d2Time-4
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 2a34b085a9f8042b3a3adeff829ed142, type: 3}
+  localizations: []

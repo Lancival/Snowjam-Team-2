@@ -1,0 +1,15 @@
+title: d1HasItems
+tags: 
+colorID: 2
+position: 1370,222
+---
+<<setSpeaker d1>>
+Santa duck! I can't believe you're finally here. Are you going to fulfill my Christmas wish? #line:00802ad
+<<setSpeaker MC>>
+Quack quack quack! It appears you've been a good little duckling. #line:0e026a0
+I brought you your greatest holiday wish. #line:048095e
+<<setSpeaker d1>>
+Hooray! I can't wait to taste that sweet strawberry jam. #line:018b300
+<<setSpeaker MC>>
+I can't wait to give you gifts next year! #line:0e52dc5
+===
