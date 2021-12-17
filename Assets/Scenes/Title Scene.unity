@@ -1000,8 +1000,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Duck Duck Toast
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
+  m_sharedMaterial: {fileID: 5051320198639115472, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1134,8 +1134,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
+  m_sharedMaterial: {fileID: 5051320198639115472, guid: 6de628f2b572a4c77bdf4fc60ff73256, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1316,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 7738772853174547271, guid: db1f440be616c4e4f8c4901e436bbd74, type: 3}
       propertyPath: m_Name
       value: Transition Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738772853174547271, guid: db1f440be616c4e4f8c4901e436bbd74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7738772853174547321, guid: db1f440be616c4e4f8c4901e436bbd74, type: 3}
       propertyPath: nextScene
