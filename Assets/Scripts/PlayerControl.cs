@@ -107,7 +107,15 @@ public class PlayerControl : MonoBehaviour
         }
 
         // Update position of camera
-        mainCamera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, mainCamera.transform.position.z);
+        float xcord = this.transform.position.x;
+        float ycord = this.transform.position.y;
+        if(xcord <= 0.7 || xcord >= 291){
+            xcord = mainCamera.transform.position.x;
+        }
+        if(ycord <= -3 || ycord >= 10){
+            ycord = mainCamera.transform.position.y;
+        }
+        mainCamera.transform.position = new Vector3(xcord, ycord, mainCamera.transform.position.z);
     }
 
     /* public void UpdateDisplay()
