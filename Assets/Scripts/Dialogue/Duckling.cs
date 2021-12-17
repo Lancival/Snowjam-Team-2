@@ -67,6 +67,8 @@ public class Duckling : MonoBehaviour
                         player.jamHeld[(int)jamType] -= jamWanted;
 
                     finished = true;
+                    foreach (var component in GetComponents<BoxCollider2D>())
+                        if(!component.isTrigger) component.enabled = false;
                     runner.StartDialogue(completed);
                 }
             }
