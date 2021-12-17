@@ -38,10 +38,12 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 inputVec = Vector2.zero;
-    private bool grounded;
+    [SerializeField] private bool grounded;
     private bool controllable;
     private Vector3 scaleFactor;
-    
+    private float bufferTime = .2f;
+    [SerializeField] private float timer;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -65,6 +67,7 @@ public class PlayerControl : MonoBehaviour
         {
             grounded = true;
             animator.SetBool("IsJumping", false);
+            timer = 0;
             if(!controllable) controllable = true;
         }
     }
@@ -94,7 +97,7 @@ public class PlayerControl : MonoBehaviour
     {
         // Set x-velocity without changing y-velocity
         if(controllable) rb.velocity = new Vector2(inputVec.x * speed, rb.velocity.y);
-
+        if(!grounded) timer += Time.fixedDeltaTime;
         // Flip duck direction and update animator state
         if (inputVec.x == 0)
             animator.SetBool("IsRunning", false);
@@ -108,10 +111,12 @@ public class PlayerControl : MonoBehaviour
                 transform.localScale = new Vector3(-1 * scaleFactor.x, scaleFactor.y, scaleFactor.z);
         }
 
-        // Jump only if grounded
-        if (inputVec.y > 0 && grounded){
+        // Jump only if groundedd
+        if (inputVec.y > 0 && (grounded || timer < bufferTime)){
+            rb.velocity = new Vector2(rb.velocity.x,0f);
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
             grounded = false;
+            timer = bufferTime;
             animator.SetBool("IsJumping", true);
         }
 
