@@ -15,9 +15,14 @@ public class Pickup : MonoBehaviour
     [SerializeField] private JamTypes jamType;
 
     private PlayerControl pickupSprites;
+    private float cycleTime = .75f;
+    private float timer;
+    private bool up;
 
     void Start()
-    {
+    {   
+        timer = 0;
+        up = true;
         pickupSprites = GameObject.Find("Player").GetComponent<PlayerControl>();
         if(type != PickupType.jam){
             jamType = JamTypes.None;
@@ -72,6 +77,18 @@ public class Pickup : MonoBehaviour
             }
             // player.UpdateDisplay();
             Destroy(this.gameObject);  
+        }
+    }
+
+    void FixedUpdate(){
+        if(up){
+            this.transform.position = new Vector3(this.transform.position.x,this.transform.position.y + .01f, 0);
+            timer += Time.deltaTime;
+            if(timer > cycleTime) up = false; 
+        }else{
+            this.transform.position = new Vector3(this.transform.position.x,this.transform.position.y - .01f, 0);
+            timer -= Time.deltaTime;
+            if(timer < 0) up = true;
         }
     }
 }
