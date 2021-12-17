@@ -30,13 +30,70 @@ SpriteAtlas:
       enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables: []
+    packables:
+    - {fileID: 2800000, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: -3080223503212745773, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -1559281356901484725, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 2928194668308689105, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -6848188056463457122, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 6002222061421167386, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 3319407714888912507, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 7510593587846959801, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 8896798593380952017, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 688291889597568660, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 9040668597113280929, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 94484441884330552, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -3508956721185465019, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 5254722313392916567, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 4463257599996429147, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 5064933946560541611, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -7506963575406112432, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -208704282954862054, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -8656534695373251407, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 8299348253928370037, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -1544815011566986436, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -794912693471409730, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -7595815615425083079, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -7700238533454324975, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -3256379750588757024, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 5387823435820647793, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 1141611094685327644, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: 469835398955011333, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  - {fileID: -2172026257459736314, guid: 3cc53c5e1e0828f44b17fd73503674a3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - snowjam_tilemapNEW_4
+  - snowjam_tilemapNEW_5
+  - snowjam_tilemapNEW_6
+  - snowjam_tilemapNEW_7
+  - snowjam_tilemapNEW_0
+  - snowjam_tilemapNEW_1
+  - snowjam_tilemapNEW_2
+  - snowjam_tilemapNEW_19
+  - snowjam_tilemapNEW_3
+  - snowjam_tilemapNEW_18
+  - snowjam_tilemapNEW_17
+  - snowjam_tilemapNEW_16
+  - snowjam_tilemapNEW_15
+  - snowjam_tilemapNEW_14
+  - snowjam_tilemapNEW_8
+  - snowjam_tilemapNEW_13
+  - snowjam_tilemapNEW_9
+  - snowjam_tilemapNEW_12
+  - snowjam_tilemapNEW_11
+  - snowjam_tilemapNEW_10
+  - snowjam_tilemapNEW_22
+  - snowjam_tilemapNEW_23
+  - snowjam_tilemapNEW_20
+  - snowjam_tilemapNEW_21
+  - snowjam_tilemapNEW_26
+  - snowjam_tilemapNEW_27
+  - snowjam_tilemapNEW_24
+  - snowjam_tilemapNEW_25
   m_RenderDataMap: {}
   m_Tag: PackingFix
   m_IsVariant: 0
