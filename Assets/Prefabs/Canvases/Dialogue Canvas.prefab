@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3478162276265864295}
   - component: {fileID: 3478162276265864294}
   - component: {fileID: 3478162276265864297}
+  - component: {fileID: 3604365003514088947}
   m_Layer: 5
   m_Name: Dialogue Canvas
   m_TagString: Untagged
@@ -88,7 +89,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3478162276265864222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +298,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f3d5a6be9b824c1fba49c447cbd0f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3604365003514088947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3478162276265864223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e37e94341714bf88b5a7db9e86a6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3478162276860849373
