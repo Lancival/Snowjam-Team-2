@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4693112902516747790}
   - component: {fileID: 4693112902516747791}
   - component: {fileID: 4693112902516747785}
-  - component: {fileID: 4693112902516747787}
+  - component: {fileID: 4379641879909134573}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 3
   speed: 2
+  bounceDist: 0
   canvas: {fileID: 0}
   UIObject: {fileID: 6158284657977300724, guid: b3d1a1281714f4d45a9830eae976bd65, type: 3}
   sprites:
@@ -235,8 +236,8 @@ PolygonCollider2D:
       - {x: 0.2647059, y: -1.1911765}
       - {x: 0.16176471, y: -1.0147059}
       - {x: 0.42647058, y: -0.86764705}
---- !u!58 &4693112902516747787
-CircleCollider2D:
+--- !u!61 &4379641879909134573
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -248,6 +249,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1}
+  m_Offset: {x: 0.10623133, y: -1.2370338}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6470587, y: 2.9411764}
+    newSize: {x: 1.8, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.32246792, y: 0.15466404}
+  m_EdgeRadius: 0
