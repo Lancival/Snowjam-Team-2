@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 3582637473827613004}
   - component: {fileID: 3582637473827613005}
   - component: {fileID: 3582637473827613007}
+  - component: {fileID: 8073258423986921527}
   m_Layer: 5
   m_Name: Settings Canvas
   m_TagString: Untagged
@@ -189,6 +190,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &8073258423986921527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582637473827613014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5394f2593ad3a49129a9f501fa27ec11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 7cb10576ca31444f4a1d51dce3156e55, type: 2}
 --- !u!1 &3582637473953498617
 GameObject:
   m_ObjectHideFlags: 0
