@@ -30,12 +30,15 @@ public class SettingsManager : MonoBehaviour
 		[Tooltip("Off button for timer.")]
 		[SerializeField] private Button offButton;
 
+	public bool visible {get; private set;}
+
 	private Animator animator;
 
     void Awake()
     {
         SettingsManagerInstance = this;
         animator = GetComponent<Animator>();
+        visible = false;
 
         Settings.onMusicVolumeChanged.AddListener(SetMusicVolumeSlider);
         Settings.onSFXVolumeChanged.AddListener(SetSFXVolumeSlider);
@@ -103,12 +106,16 @@ public class SettingsManager : MonoBehaviour
         SetTextDelaySlider(Settings.TEXT_DELAY);
         SetTimerButtons(Settings.TIMER_ACTIVE);
 
+        visible = true;
+
     	animator.ResetTrigger("FadeOut");
     	animator.SetTrigger("FadeIn");
     }
 
     public void FadeOut()
     {
+
+    	visible = false;
 
     	animator.ResetTrigger("FadeIn");
     	animator.SetTrigger("FadeOut");

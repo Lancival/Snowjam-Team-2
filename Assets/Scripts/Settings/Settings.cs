@@ -12,29 +12,39 @@ using UnityEngine.Events;
 
 public static class Settings
 {
-	/* Gameplay State */
-    public static bool PAUSED = false;
-
+	
     /* Audio Settings */
 	// Master Volume, affect all sounds and music
 	public static UnityEvent<float> onMasterVolumeChanged = new UnityEvent<float>();
 	public static float MASTER_VOLUME {
 		get {return PlayerPrefs.GetFloat("Master", 1.0f);} // Default of full volume
-		set {PlayerPrefs.SetFloat("Master", value);}
+		set
+		{
+			PlayerPrefs.SetFloat("Master", value);
+			onMasterVolumeChanged.Invoke(value);
+		}
 	}
 
 	// Music Volume
 	public static UnityEvent<float> onMusicVolumeChanged = new UnityEvent<float>();
 	public static float MUSIC_VOLUME {
 		get {return PlayerPrefs.GetFloat("Music", 1.0f);} // Default of full volume
-		set {PlayerPrefs.SetFloat("Music", value);}
+		set
+		{
+			PlayerPrefs.SetFloat("Music", value);
+			onMusicVolumeChanged.Invoke(value);
+		}
 	}
 
 	// SFX Volume
 	public static UnityEvent<float> onSFXVolumeChanged = new UnityEvent<float>();
 	public static float SFX_VOLUME {
 		get {return PlayerPrefs.GetFloat("SFX", 1.0f);} // Default of full volume
-		set {PlayerPrefs.SetFloat("SFX", value);}
+		set
+		{
+			PlayerPrefs.SetFloat("SFX", value);
+			onSFXVolumeChanged.Invoke(value);
+		}
 	}
 
 	/* Text Settings */
@@ -42,7 +52,11 @@ public static class Settings
 	public static UnityEvent<float> onTextDelayChanged = new UnityEvent<float>();
 	public static float TEXT_DELAY {
 		get {return PlayerPrefs.GetFloat("Delay", 0.025f);} // Default of full volume
-		set {PlayerPrefs.SetFloat("Delay", value);}
+		set
+		{
+			PlayerPrefs.SetFloat("Delay", value);
+			onTextDelayChanged.Invoke(value);
+		}
 	}
 
 	/* Timer Settings */
@@ -50,6 +64,10 @@ public static class Settings
 	public static UnityEvent<bool> onTimerActiveChanged = new UnityEvent<bool>();
 	public static bool TIMER_ACTIVE {
 		get {return (PlayerPrefs.GetInt("Timer", 1) != 0 ? true : false);} // Timer active by default
-		set {PlayerPrefs.SetInt("Timer", value ? 1 : 0);}
+		set
+		{
+			PlayerPrefs.SetInt("Timer", value ? 1 : 0);
+			onTimerActiveChanged.Invoke(value);
+		}
 	}
 }

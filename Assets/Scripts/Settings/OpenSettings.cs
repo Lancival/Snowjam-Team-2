@@ -9,7 +9,13 @@ public class OpenSettings : MonoBehaviour
 {
 	void OnSettings()
 	{
-		if (SettingsManager.SettingsManagerInstance != null)
-			SettingsManager.SettingsManagerInstance.FadeIn();
+		SettingsManager manager = SettingsManager.SettingsManagerInstance;
+		if (manager != null)
+		{
+			if (manager.visible)
+				manager.FadeOut();
+			else
+				manager.FadeIn();
+		}
 	}
 }

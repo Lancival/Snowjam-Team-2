@@ -17,30 +17,50 @@ public class Timer : MonoBehaviour
 	private TMP_Text minutesText;
 	private TMP_Text secondsText;
 
+    private bool active;
+
     void Awake()
     {
-    	timer = startingTime;
     	minutesText = transform.GetChild(0).GetComponent<TMP_Text>();
     	secondsText = transform.GetChild(1).GetComponent<TMP_Text>();
     	TimerInstance = this;
+
+        ChangeTimer(Settings.TIMER_ACTIVE);
+        Settings.onTimerActiveChanged.AddListener(ChangeTimer);
+    }
+
+    void OnDestroy()
+    {
+        Settings.onTimerActiveChanged.RemoveListener(ChangeTimer);
+    }
+
+    private void ChangeTimer(bool newActive)
+    {
+        active = newActive;
+        minutesText.transform.parent.gameObject.SetActive(newActive);
+        if (active)
+            timer = startingTime;
     }
 
     void Update()
     {
-    	if (timer <= 0)
-    		timer = 0;
+        if (active)
+        {
+        	if (timer <= 0)
+        		timer = 0;
 
-        int seconds = (int) (timer%60);
-        minutesText.text = ((int) (timer / 60)).ToString("D2");
-        secondsText.text = ((int) (timer % 60)).ToString("D2");
+            int seconds = (int) (timer%60);
+            minutesText.text = ((int) (timer / 60)).ToString("D2");
+            secondsText.text = ((int) (timer % 60)).ToString("D2");
 
-        if (timer <= 0)
-        {	
-        	this.enabled = false;
-        	return;
+            if (timer <= 0)
+            {	
+            	this.enabled = false;
+            	return;
+            }
+
+            timer -= Time.deltaTime;
         }
-
-        timer -= Time.deltaTime;
     }
 
     public float TimeLeft()
