@@ -14,7 +14,7 @@ public class AdvanceDialogue : MonoBehaviour
     {
     	if (ui == null)
     	{
-    		Debug.LogError("${this.name} is missing a reference to the DialogueUI component.");
+    		Debug.LogError("AdvanceDialogue script on Player is missing a reference to the DialogueUI component.");
     		Destroy(this);
     	}
     }
