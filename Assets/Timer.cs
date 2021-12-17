@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(TMP_Text))]
 [DisallowMultipleComponent]
 
 public class Timer : MonoBehaviour
@@ -15,12 +14,14 @@ public class Timer : MonoBehaviour
 
 	public static Timer TimerInstance {get; private set;}
 
-	private TMP_Text timerText;
+	private TMP_Text minutesText;
+	private TMP_Text secondsText;
 
     void Awake()
     {
     	timer = startingTime;
-    	timerText = GetComponent<TMP_Text>();
+    	minutesText = transform.GetChild(0).GetComponent<TMP_Text>();
+    	secondsText = transform.GetChild(1).GetComponent<TMP_Text>();
     	TimerInstance = this;
     }
 
@@ -29,9 +30,9 @@ public class Timer : MonoBehaviour
     	if (timer <= 0)
     		timer = 0;
 
-    	int minutes = (int) (timer/60);
         int seconds = (int) (timer%60);
-        timerText.text = seconds < 10 ? $"Time: {minutes}:0{seconds}" : $"Time: {minutes}:{seconds}";
+        minutesText.text = ((int) (timer / 60)).ToString("D2");
+        secondsText.text = ((int) (timer % 60)).ToString("D2");
 
         if (timer <= 0)
         {	
