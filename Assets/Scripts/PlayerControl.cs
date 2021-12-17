@@ -16,9 +16,12 @@ public class PlayerControl : MonoBehaviour
     public bool presentHeld { get; set; }
     public List<int> jamHeld { get; set; }
 
+    [Header("Movement Parameters")]
     [SerializeField] private int jumpHeight;
     [SerializeField] private float speed;
     [SerializeField] private int bounceDist;
+
+    [Header("Connected Game Objects")]
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject UIObject;
     [SerializeField] public List<Sprite> sprites;
@@ -79,17 +82,26 @@ public class PlayerControl : MonoBehaviour
         // Set x-velocity without changing y-velocity
         if(controllable) rb.velocity = new Vector2(inputVec.x * speed, rb.velocity.y);
 
-        // Flip duck direction
-        if (inputVec.x > 0)
-            transform.localScale = Vector3.one;
-        else if (inputVec.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        // Flip duck direction and update animator state
+        if (inputVec.x == 0)
+            animator.SetBool("IsRunning", false);
+        else
+        {
+            animator.SetBool("IsRunning", true);
+            
+            if (inputVec.x > 0)
+                transform.localScale = Vector3.one;
+            else if (inputVec.x < 0)
+                transform.localScale = new Vector3(-1, 1, 1);
+        }
 
         // Jump only if grounded
         if (inputVec.y > 0 && grounded){
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
             grounded = false;
         }
+
+        // Update position of camera
         mainCamera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, mainCamera.transform.position.z);
     }
 
