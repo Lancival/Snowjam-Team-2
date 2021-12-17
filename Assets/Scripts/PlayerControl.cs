@@ -7,7 +7,10 @@ using UnityEngine.UIElements;
 using Yarn.Unity;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerInput))]
+[DisallowMultipleComponent]
 
 public class PlayerControl : MonoBehaviour
 {
@@ -17,22 +20,27 @@ public class PlayerControl : MonoBehaviour
     public List<int> jamHeld { get; set; }
 
     [Header("Movement Parameters")]
-    [SerializeField] private int jumpHeight;
-    [SerializeField] private float speed;
-    [SerializeField] private int bounceDist;
+        [Tooltip("How high the player can jump.")]
+        [SerializeField] private int jumpHeight;
+
+        [Tooltip("How quickly the player moves horizontally.")]
+        [SerializeField] private float speed;
+
+        [Tooltip("How far back the player will bounce back after colliding with an enemy.")]
+        [SerializeField] private int bounceDist;
 
     [Header("Connected Game Objects")]
-    [SerializeField] private GameObject canvas;
-    [SerializeField] private GameObject UIObject;
-    [SerializeField] public List<Sprite> sprites;
-    [SerializeField] public TMP_Text timerText;
-    [SerializeField] public GameObject mainCamera;
+        [SerializeField] private GameObject canvas;
+        [SerializeField] private GameObject UIObject;
+        [SerializeField] public List<Sprite> sprites;
+        [SerializeField] public TMP_Text timerText;
+        [SerializeField] public GameObject mainCamera;
 
     private float timer; // Time in seconds
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 inputVec = Vector2.zero;
-    [SerializeField] private bool grounded;
+    private bool grounded;
     private bool controllable;
     
     void Awake()
@@ -88,7 +96,7 @@ public class PlayerControl : MonoBehaviour
         else
         {
             animator.SetBool("IsRunning", true);
-            
+
             if (inputVec.x > 0)
                 transform.localScale = Vector3.one;
             else if (inputVec.x < 0)
