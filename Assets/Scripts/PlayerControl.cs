@@ -33,7 +33,7 @@ public class PlayerControl : MonoBehaviour
         [SerializeField] private GameObject canvas;
         [SerializeField] private GameObject UIObject;
         [SerializeField] public List<Sprite> sprites;
-        [SerializeField] public GameObject mainCamera;
+        private Transform mainCamera;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -44,10 +44,12 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        mainCamera = Camera.main.transform;
+
         jamHeld = new List<int>(3) {0, 0, 0};
         breadHeld = 0;
         butterHeld = 0;
-        animator = GetComponent<Animator>();
         controllable = true;
     }
 
@@ -110,12 +112,12 @@ public class PlayerControl : MonoBehaviour
         float xcord = this.transform.position.x;
         float ycord = this.transform.position.y;
         if(xcord <= 0.7) {
-            xcord = mainCamera.transform.position.x;
+            xcord = mainCamera.position.x;
         }
         if(ycord <= -3 || ycord >= 10){
-            ycord = mainCamera.transform.position.y;
+            ycord = mainCamera.position.y;
         }
-        mainCamera.transform.position = new Vector3(xcord, ycord, mainCamera.transform.position.z);
+        mainCamera.position = new Vector3(xcord, ycord, mainCamera.position.z);
     }
 
     /* public void UpdateDisplay()
