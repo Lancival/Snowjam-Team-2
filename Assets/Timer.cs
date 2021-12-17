@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
 	[Tooltip("Amount of time remaining in seconds.")]
 	[SerializeField] private float timer;
 
-	public Timer TimerInstance {get; private set;}
+	public static Timer TimerInstance {get; private set;}
 
 	private TMP_Text timerText;
 

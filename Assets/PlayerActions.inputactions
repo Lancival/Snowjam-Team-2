@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
+                    "name": "Space",
                     "type": "Button",
                     "id": "f4f1979e-bbe9-4888-a599-a1a39516e5e9",
                     "expectedControlType": "Button",
@@ -270,7 +270,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Jump",
+                    "action": "Space",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
