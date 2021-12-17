@@ -75,7 +75,7 @@ public class Pickup : MonoBehaviour
                     player.jamHeld[(int)jamType] += 1;
                     break;    
             }
-            // player.UpdateDisplay();
+            other.GetComponent<AudioSource>().Play();
             Destroy(this.gameObject);  
         }
     }
