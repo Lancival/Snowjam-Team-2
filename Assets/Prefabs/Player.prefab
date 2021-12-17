@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 4693112902516747795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f974f772ff5ab4c89484c559d3aea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 3
-  speed: 2
-  bounceDist: 0
+  jumpHeight: 8
+  speed: 4
+  bounceDist: 3
   canvas: {fileID: 0}
   UIObject: {fileID: 6158284657977300724, guid: b3d1a1281714f4d45a9830eae976bd65, type: 3}
   sprites:
@@ -209,8 +209,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.61764705, y: -0.60294116}
-      - {x: 0.61764705, y: -0.5147059}
-      - {x: 0.63235295, y: 0.22058824}
+      - {x: 0.6400498, y: -0.5669787}
+      - {x: 0.85845697, y: 0.116232425}
       - {x: 0.9852941, y: 0.48529413}
       - {x: 0.9852941, y: 0.5441176}
       - {x: 0.97058827, y: 0.5882353}
@@ -226,9 +226,9 @@ PolygonCollider2D:
       - {x: -0.85294116, y: -0.13235295}
       - {x: -0.9558824, y: -0.1764706}
       - {x: -0.9558824, y: -0.29411766}
-      - {x: -0.7941176, y: -0.5735294}
-      - {x: -0.63235295, y: -0.8088235}
-      - {x: -0.05882353, y: -1.0441177}
+      - {x: -0.7675368, y: -0.56466883}
+      - {x: -0.6298238, y: -0.7379398}
+      - {x: -0.04785627, y: -1.0949795}
       - {x: -0.04411765, y: -1.2647059}
       - {x: -0.03925738, y: -1.2777143}
       - {x: 0.26227576, y: -1.2777143}

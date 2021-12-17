@@ -64,6 +64,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             grounded = true;
+            animator.SetBool("IsJumping", false);
             if(!controllable) controllable = true;
         }
     }
@@ -82,6 +83,10 @@ public class PlayerControl : MonoBehaviour
         {
             rb.AddForce(new Vector2(-1, 1) * bounceDist, ForceMode2D.Impulse);
             controllable = false;
+        }
+        else if (other.gameObject.tag == "Ground")
+        {
+            animator.SetBool("IsJumping", false);
         }
     }
 
@@ -107,6 +112,7 @@ public class PlayerControl : MonoBehaviour
         if (inputVec.y > 0 && grounded){
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
             grounded = false;
+            animator.SetBool("IsJumping", true);
         }
 
         // Update position of camera
