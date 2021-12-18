@@ -154,6 +154,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b509c7f7c7cdbf347bf5a71e046e82a7, type: 3}
   - {fileID: 21300000, guid: 473480bd7cc892544b8f7ad0c39cbede, type: 3}
   - {fileID: 21300000, guid: ff90da68d8b32f84ebf8a2d2083eba72, type: 3}
+  grounded: 0
+  timer: 0
 --- !u!114 &4693112902516747791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!114 &579521135709850568
 MonoBehaviour:
   m_ObjectHideFlags: 0
