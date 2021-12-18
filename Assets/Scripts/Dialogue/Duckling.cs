@@ -70,6 +70,7 @@ public class Duckling : MonoBehaviour
                     foreach (var component in GetComponents<BoxCollider2D>())
                         if(!component.isTrigger) component.enabled = false;
                     runner.StartDialogue(completed);
+                    player.ResetDisplay();
                 }
             }
         }

@@ -31,18 +31,21 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Connected Game Objects")]
         [SerializeField] private GameObject canvas;
-        [SerializeField] private GameObject UIObject;
+        [SerializeField] private List<GameObject> UIObjects;
         [SerializeField] public List<Sprite> sprites;
         private Transform mainCamera;
 
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 inputVec = Vector2.zero;
-    [SerializeField] private bool grounded;
+    private bool grounded;
     private bool controllable;
     private Vector3 scaleFactor;
     private float bufferTime = .2f;
-    [SerializeField] private float timer;
+    private float timer;
+    private Vector3 nextLoc;
+    private Vector3 startLoc;
+    private List<GameObject> displayList;
 
     void Awake()
     {
@@ -54,6 +57,9 @@ public class PlayerControl : MonoBehaviour
         breadHeld = 0;
         butterHeld = 0;
         controllable = true;
+        startLoc = new Vector3(60,1000,0);
+        nextLoc = startLoc;
+        displayList = new List<GameObject>();
     }
 
     public void OnMove(InputValue input)
@@ -132,20 +138,16 @@ public class PlayerControl : MonoBehaviour
         mainCamera.position = new Vector3(xcord, ycord, mainCamera.position.z);
     }
 
-    /* public void UpdateDisplay()
+    public void UpdateDisplay(int i)
+    {   
+        displayList.Add(Instantiate(UIObjects[i],nextLoc, Quaternion.identity, canvas.transform));
+        nextLoc += new Vector3(150,0,0);
+    }
+
+    public void ResetDisplay()
     {
-        for(int i = 0; i < breadHeld; i++){
-            GameObject nextUIObject = Instantiate(UIObject, canvas.transform);
-            nextUIObject.transform.position = nextUIObject.transform.position + new Vector3(i*150,0,0);
-            nextUIObject.GetComponent<Image>().image = sprites[0].texture;
-        }
-        for(int i = 0; i < butterHeld; i++){
-            Instantiate(UIObject, canvas.transform);
-        }
-        foreach(var jam in jamHeld){
-            for(int i = 0; i < jam; i++){
-                Instantiate(UIObject, canvas.transform);
-            }
-        }
-    } */
+        foreach(var e in displayList)
+            Destroy(e);
+        nextLoc = startLoc;
+    }
 }

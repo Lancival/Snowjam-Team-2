@@ -58,21 +58,24 @@ public class Pickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "Player"){
+        if(other.gameObject.name == "Player" && other == other.gameObject.GetComponent<PolygonCollider2D>()){
             Debug.Log($"Picking up object {this.name} ...");
             PlayerControl player = other.gameObject.GetComponent<PlayerControl>();
             switch(type){
                 case PickupType.bread:
                     player.breadHeld += 1;
+                    player.UpdateDisplay(0);
                     break;
                 case PickupType.butter:
                     player.butterHeld += 1;
                     break;
                 case PickupType.present:
                     player.presentHeld = true;
+                    player.UpdateDisplay(1);
                     break;
                 case PickupType.jam:
                     player.jamHeld[(int)jamType] += 1;
+                    player.UpdateDisplay(2 + (int)jamType);
                     break;    
             }
             other.GetComponent<AudioSource>().Play();
