@@ -17,12 +17,20 @@ public class ShowLetter : MonoBehaviour
     {
         runner = GetComponent<DialogueRunner>();
         if (manager)
+        {
         	runner.AddCommandHandler("showLetter", Show);
+            runner.AddCommandHandler("endGame", EndGame);
+        }
     }
 
     private void Show(string[] parameters)
     {
     	manager.ShowLetter();
+    }
+
+    private void EndGame(string[] parameters)
+    {
+        SceneLoader.instance.LoadNextScene();
     }
     
 }
