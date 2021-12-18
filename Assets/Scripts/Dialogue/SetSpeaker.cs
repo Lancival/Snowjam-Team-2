@@ -38,8 +38,10 @@ public class SetSpeaker : MonoBehaviour
     {
     	// Maintain correct scale
     	if (transform.parent != null)
-    		if (transform.parent.localScale.x * transform.localScale.x < 0)
-    			transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
+        {
+            Vector3 parentScale = transform.parent.localScale;
+            transform.localScale = Vector3.Scale(new Vector3(0.01f, 0.01f, 1), new Vector3(1.0f/parentScale.x, 1.0f/parentScale.y, 1));
+        }
     }
 
     private void HandleSpeaker(string[] parameters) {
